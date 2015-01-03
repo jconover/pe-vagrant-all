@@ -7,6 +7,11 @@
 *	[https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 *	Grab the **Oracle VM VirtualBox Extension Pack** too.
 
+* This uses environments and is set with a link for persistent development.
+
+    /etc/puppetlabs/puppet/environments
+
+
 ##### Vagrant Plugins
 
 		sudo vagrant plugin install oscar
