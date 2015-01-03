@@ -1,0 +1,77 @@
+---
+vms:
+- name: "master"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-master" ]
+
+- name: "node01"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "node02"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "web01"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "app01"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "app02"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "db01"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "debian6a"
+  box: "puppetlabs/debian-6.0.9-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "debian6b"
+  box: "puppetlabs/debian-6.0.9-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "debian7a"
+  box: "puppetlabs/debian-7.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "debian7b"
+  box: "puppetlabs/debian-7.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "ubuntu12a"
+  box: "puppetlabs/ubuntu-12.04-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "ubuntu12b"
+  box: "puppetlabs/ubuntu-12.04-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "ubuntu14a"
+  box: "puppetlabs/ubuntu-14.04-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "ubuntu14b"
+  box: "puppetlabs/ubuntu-14.04-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos6a"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos6b"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos5a"
+  box: "puppetlabs/centos-5.10-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos5b"
+  box: "puppetlabs/centos-5.10-64-nocm"
+  roles: [ "pe-puppet-agent" ]

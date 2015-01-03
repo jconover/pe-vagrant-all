@@ -1,0 +1,21 @@
+---
+vms:
+- name: "master"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-master" ]
+
+- name: "web01"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "app01"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "app02"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "db01"
+  box: "puppetlabs/centos-6.5-64-nocm"
+  roles: [ "pe-puppet-agent" ]

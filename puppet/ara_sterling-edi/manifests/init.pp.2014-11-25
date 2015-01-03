@@ -1,0 +1,68 @@
+# == Class: sterlingb2b
+#
+# Full description of class sterlingb2b here.
+#
+# === Parameters
+#
+# Document parameters here.
+#
+# [*sample_parameter*]
+#   Explanation of what this parameter affects and what it defaults to.
+#   e.g. "Specify one or more upstream ntp servers as an array."
+#
+# === Variables
+#
+# Here you should define a list of variables that this module would require.
+#
+# [*sample_variable*]
+#   Explanation of how this variable affects the funtion of this class and if
+#   it has a default. e.g. "The parameter enc_ntp_servers must be set by the
+#   External Node Classifier as a comma separated list of hostnames." (Note,
+#   global variables should be avoided in favor of class parameters as
+#   of Puppet 2.6.)
+#
+# === Examples
+#
+#  class { sterlingb2b:
+#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
+#  }
+#
+# === Authors
+#
+# Author Name <author@domain.com>
+#
+# === Copyright
+#
+# Copyright 2014 Your name here, unless otherwise noted.
+#
+class sterlingb2b {
+
+  #file { "/apps/ibm": ensure => directory}
+
+  file { "/var/tmp/SI_5020400.jar":
+    source => "puppet://master/modules/sterlingb2b/SI_5020400.jar",
+  }
+
+  file { "/var/tmp/unrestrictedpolicyfiles.zip":
+    source => "puppet://master/modules/sterlingb2b/unrestrictedpolicyfiles.zip",
+  }
+
+  file { "/var/tmp/Core_License.xml":
+    source => "puppet://master/modules/sterlingb2b/Core_License.xml",
+  }
+
+  file { "/var/tmp/silent_db11g.txt":
+    #mode   => 777,
+    #owner  => root,
+    #group  => root,
+    source => "puppet://master/modules/sterlingb2b/silent_db11g.txt",
+  }
+
+  exec { sterlingb2b:
+    command => "/bin/bash -c '/apps/ibm/java-x86_64-70/bin/java -jar /var/tmp/SI_5020400.jar -f /var/tmp/silent_db11g.txt'",
+    cwd     => '/apps/ibm',
+    creates => '/apps/ibm/sfg2242',
+    timeout => '6000'
+  }
+
+}

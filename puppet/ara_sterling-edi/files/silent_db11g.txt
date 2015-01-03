@@ -1,0 +1,308 @@
+# ****************************************************************************
+# Monday March 31 2014
+# Gary Li, IBM
+# SI 5.2.4.2. Oracle 11g
+#
+# To start the installation, enter: /absolutePath/bin/java -jar /absolutePath/SI_<build_number>.jar -f /absolutePath/SilentInstallFile
+#
+# Open your Web browser to http://host:port/(interface)
+#  host is the IP address
+#  port is where Sterling Integrator resides on your system
+# (interface) is the interface used by Sterling Integrator.
+# Valid values for interface are:
+#   dashboard
+#   filegateway
+#
+# ****************************************************************************
+# Variable Definitions
+# ****************************************************************************
+# ****************************************************************************
+# Accept the license agreement for product installation
+ACCEPT_LICENSE=YES
+# (Required) Indicates if the user accepts the license agreement.
+# Default: YES
+# ****************************************************************************
+# ****************************************************************************
+# Location of the JVM SDK to use for installation
+JVM_LOC=/apps/ibm/ibm-java-x86_64-60
+# (Required) Full path to JDK directory.
+# ****************************************************************************
+# ****************************************************************************
+# JCE Security Distribution
+#JCE_DIST_FILE=/home/Gateway/unrestricted.zip
+JCE_DIST_FILE=/apps/ibm/unrestrictedpolicyfiles.zip
+# (Required) Full path to unlimited strength JCE policy file.
+# If present, this file will overwrite the JCE file in the JDK.
+# Example: absolutePath\\unrestrict123.zip
+# ****************************************************************************
+# ****************************************************************************
+# License file to install
+#LICENSE_FILE_PATH=/home/Gateway/Core_License.xml
+LICENSE_FILE_PATH=/apps/ibm/Core_License.xml
+# (Required) Full path to a valid license file.
+# Example: absolutePath\\Full_License.xml
+# ****************************************************************************
+# ****************************************************************************
+# Installation license file is available LICENSE_FILE_PATH
+SI_LICENSE_AVAILABLE=YES
+# Indicates if a license is being passed in and is required for installation.
+# Default: YES
+# ****************************************************************************
+# ****************************************************************************
+# Installation directory for the product
+INSTALL_DIR=/apps/ibm/sfg2242
+# INSTALL_DIR=C\:\\SterlingCommerce\\SI50\\install implied with "install" added
+# (Required) Directory that includes subdirectories like “bin” (where many
+# commands are stored) and “properties” (where many property files are stored).
+# The installation directory that you specify during an interactive
+# installation, will create the subdirectory “install” under the specified
+# directory. Although you can enter your own path, the install_dir\install path
+# matches the path that is created during an interactive installation. It
+# also matches the path that is used in documentation. For example, an
+# instruction to stop Sterling Integrator reads:
+#  1 Navigate to the install_dir\install\bin directory.
+#  2 Run the hardstop.cmd command.
+# Note: The INSTALL_DIR property cannot point to a pre-existing directory,
+# or the installation will fail.
+# Silent install will not add the "install" subdirectory to the path supplied.
+# ****************************************************************************
+# ****************************************************************************
+# Specify the DB vendor to use for the installation database server
+DB_VENDOR=Oracle
+# (Required) Database vendor.
+# Valid values:
+#  Oracle
+#  MSSQL2005
+#  DB2
+#  MySQL
+# Default=MySQL
+# ****************************************************************************
+# ****************************************************************************
+# Installation host name to bind the ports on
+INSTALL_IP=node01
+# (Required) Host name or IP address.
+# Valid values:
+#  localhost
+#  (IP address)
+#  (hostname)
+# Caution: Sterling Integrator 5.0 does not support IPv6 installation
+# on Windows. Before applying an IPv6 address, see IPv6
+# Capabilities section in Sterling Integrator 5.0 System Requirements
+# guide.
+# Default=localhost
+# ****************************************************************************
+# ****************************************************************************
+# Product answering port starting number (+100)
+PORT1=10000
+# (Required) Initial port for assigning port numbers to adapters and other
+# items. Ports are assigned consecutively from this port (for example,
+# JNDI_PORT = initial port + 1, MYSQL_PORT = initial port + 3).
+# Example: 12345
+# Default: 8080
+# ****************************************************************************
+# ****************************************************************************
+# Installation pass phrase (do not forget this!)
+APSERVER_PASS=password
+# (Required) Passphrase used to secure all encrypted data in database.
+# Must be larger than 5 characters or upgrades will fail in interactive mode.
+# Length is ignored in silent mode.
+# ****************************************************************************
+# ****************************************************************************
+# Mail notification to be sent to email address
+SI_ADMIN_MAIL_ADDR=admin@LINUXRED.localdomain
+# (Required) E-mail address for the administrative user.
+# Example: abc@xyz.com
+# ****************************************************************************
+# ****************************************************************************
+# Email server to use for SMTP gateway
+SI_ADMIN_SMTP_HOST=localhost
+# (Required) Valid SMTP host through which the system can e-mail the
+# administrative user.
+# Example: smtp.server.com
+# ****************************************************************************
+# ****************************************************************************
+# Enable FIPS mode
+FIPS_MODE=false
+# (Optional) Indicates if you are using FIPS (Federal Information
+# Processing Standards) mode.
+# Valid values:
+#  true - Enable FIPS mode.
+#  false - Disable FIPS mode.
+# Default=false
+# ****************************************************************************
+# ****************************************************************************
+DB_HOST=node01
+# (Required if DB_VENDOR=Oracle, MSSQL2005, or DB2) Database
+# host name.
+# Example: abcd
+# Default: localhost
+# ****************************************************************************
+##############################################################################
+# Don't need to specify any of these DB parameters for MySQL
+#
+# ****************************************************************************
+#MSSQL2005=true
+# (Microsoft SQL Server 2005) Set this attribute
+# (All other servers) Do not include this attribute.
+# Note: This attribute is case-sensitive.
+# Default: true
+# ****************************************************************************
+ORACLE_USE_BLOB=true
+# (Required if DB_VENDOR=Oracle) Indicates the data type to use for caching.
+# Valid values:
+#  true - BLOB (binary large object)
+#  false - Long Raw
+# Default=true
+# ****************************************************************************
+# ****************************************************************************
+DB_USER=sfg224
+# (Required if DB_VENDOR=Oracle, MSSQL2005, or DB2) Database user name.
+# Example: abcd_123_1
+# ****************************************************************************
+# ****************************************************************************
+DB_PASS=sfg224
+# (Required if DB_VENDOR=Oracle, MSSQL2005, or DB2) Database password.
+# Example: xyz
+# ****************************************************************************
+# ****************************************************************************
+DB_DATA=DB11G
+# (Required if DB_VENDOR=Oracle, MSSQL2005, or DB2) Database catalog name.
+# Example: abcd
+# ****************************************************************************
+# ****************************************************************************
+DB_PORT=1521
+# (Required if DB_VENDOR=Oracle, MSSQL2005, or DB2) Database port.
+# Example: 1234
+# ****************************************************************************
+# ****************************************************************************
+DB_DRIVERS=/home/vagrant/ojdbc6.jar
+# JDBC driver file(s). If DB_VENDOR is:
+# Oracle or MSSQL2005, specify one driver.
+# DB2, specify two drivers.
+# If you specify more than one driver, use colons (:) to separate the file
+# names.
+# Examples:
+#  JDBC_driver_dir\\jdbc.jar
+#  JDBC_driver_dir\\db2_1_jdbc.jar:JDBC_driver_dir\\db2_2_jdbc.jar
+# Semi-colon separated list of the 3 jar files required for MS SQL.
+# Or point to the mssql_all.jar, instead of the 3 separate jars.
+# ****************************************************************************
+# ****************************************************************************
+DB_CREATE_SCHEMA=true
+# (Required if DB_VENDOR=Oracle, MSSQL2005, or DB2) Indicates if you want the
+# database schema automatically created.
+# Valid values:
+#  true - Automatically create the schema.
+#  false - Manually create the schema.
+# Default=true
+# Note: If you create the database schema manually, restart the installation
+# procedure in a new installation directory. You can delete the installation
+# directory created earlier.
+# ****************************************************************************
+# ****************************************************************************
+# Enable DEBUG mode
+DEBUG=true
+# (Optional) Records events that occur during the installation in InstallSI.log
+# Valid values:
+#  true - records events that occur during the installation.
+#  false - does not record the events that occur during installation.
+# Default=false
+# ****************************************************************************
+# ****************************************************************************
+# JDK 32 or 64 bit
+JDK64BIT=true
+# Indicates if a 32-bit or 64-bit JDK is being used. Refer to the System
+# Requirements to determine the type of JDK for your operating system.
+# Valid values:
+#  true - 64-bit
+#  false - 32-bit
+# Default=false
+# ****************************************************************************
+# ****************************************************************************
+# Install desktop icons for installation (Windows or Linux only)
+Icons=false
+# Indicates whether to create a desktop icon for launching Sterling Integrator.
+# Valid values:
+#  true - Create desktop icon.
+#  false - Do not create desktop icon.
+# Default=false
+# ****************************************************************************
+# ****************************************************************************
+# Log the DB driver version that is being used with this installation
+#DB_DRIVERS_VERSION=1_1_1501_200
+# Free form version string for JDBC driver. This is informational only.
+# Example: 8_1_5
+# Default for SI5003 MySQL: DB_DRIVERS_VERSION=1_2
+# ****************************************************************************
+# ****************************************************************************
+LOAD_FACTORY_SETUP=true
+# Indicates whether factory setup should be loaded during installation.
+# Valid values:
+#  true - loads factory setup during installation.
+#  false - does not load factory setup during installation.
+#    Run loadDefaults command after installation.
+# Note: To manually set LOAD_FACTORY_SETUP to false after an
+# installation where LOAD_FACTORY_SETUP=true, change LOAD_FACTORY_SETUP
+# to false in sandbox.cfg file.
+# Default=true
+# ****************************************************************************
+# ****************************************************************************
+# Install Gentran Server for UNIX assets
+CONFIG_GS=No
+# Indicates if integration with Gentran Server for UNIX should be configured.
+# Default: No
+# If you want to configure GS, Change CONFIG_GS to Yes
+# ****************************************************************************
+# ****************************************************************************
+#NO_DBVERIFY=false
+NO_DBVERIFY=true
+# Valid values are true/false. When set to true during installation and
+# installservice, dbverify will not be run.
+# This means that the Sterling Integrator will not generate DDL to make
+# the database like the XML entity repository.
+# Initial DB installation should be set to false if install is configuring DB.
+# Additional node installation should be set to true.
+# ****************************************************************************
+# ****************************************************************************
+# Reinitialized the database during installation?
+REINIT_DB=true
+# If the installation should drop the database and rebuild from scratch.
+# Valid values:
+#   true - blows away the existing DB
+#   false
+# Default=true
+# Change to false for additional node installations.
+# ****************************************************************************
+################################################################
+#
+# GUI SAMPLE silent.txt open items
+#
+# Not documented: cleanupfiles=true
+# Not documented: SUPPORT_MULTIBYTE=N
+# Not documented: ant.install.config.version=0.0
+# Not documented: cmd_compwarn=-compwarn
+# Not documented: OS\ Check=true
+# Not documented: progress-targets=cleanup,
+# Not documented: InstallDir.properties-targets=Install Directory,
+# Not documented: basedir=c\:\\Tmp\\antinstall7
+# Not documented: UPGRADE=false
+# Not documented: PRE_INSTALL_DIR=C\:\\SterlingCommerce\\SI50
+# Not documented: Core\ Components\ on=true
+# Not documented: GIS_JAR=C\:\\temp\\SI5003\\SI.jar
+# Not documented: SPACE_PARMS_DB=,C\:\\SterlingCommerce\\SI50,C\:\\temp\\SI5003\\SI.jar
+# Not documented: Save\ install\ files=true
+# Not documented: NOT_FIRST_NODE=false
+# Not documented: DoXapiJavaDoc=false
+# Not documented: SERVICE_INSTALL=true
+# Not documented: JDK\ Version\ Check=true
+# Not documented: TEST_DB=MSSQL2005,,,,localhost,,,,,
+# Not documented: PRE_INSTALL_LOG_DIR=C\:\\SterlingCommerce\\SI50\\PreInstallSI.log
+# Not documented: DISPLAY_DB_PASS=********
+# Not documented: DISPLAY_DB_HOST=localhost
+# Not documented: PREV_INSTALL_DIR=C\:\\Tmp\\antinstall7
+# Not documented: Install\ Services=true
+# Not documented: InstallActions.properties-targets=OS Check,JDK Version Check,Core Components on-win,Save install files-win,cleanupfiles-win,Install Services-win,Icons-win,
+#
+# Documented as clear, gui install is encrypted in silent install file: APSERVER_PASS=password
+# ****************************************************************************
+# Must leave a blank line at the end of file

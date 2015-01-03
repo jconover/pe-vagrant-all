@@ -1,0 +1,17 @@
+{
+  "name": "ara-sterlingb2b",
+  "version": "0.1.0",
+  "author": "ara",
+  "summary": "Installs Sterling B2B",
+  "license": "Apache 2.0",
+  "source": "",
+  "project_page": "ibm.com",
+  "issues_url": "isara@costco.com",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+

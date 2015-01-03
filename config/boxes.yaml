@@ -1,0 +1,42 @@
+---
+# Boxes from http://puppet-vagrant-boxes.puppetlabs.com/
+# Updated: 2013-08-08
+boxes:
+# From Chef
+  'chef-centos-5.11': "chef/centos-5.11"
+  'chef-centos-6.6': "chef/centos-6.6"
+  'chef-centos-7.0': "chef/centos-7.0"
+  'chef-debian-6.0.10': "chef/debian-6.0.10"
+  'chef-debian-7.7': "chef/debian-7.7"
+  'chef-fedora-20': "chef/fedora-20"
+  'chef-freebsd-9.2': "chef/freebsd-9.2"
+  'chef-opensuse-13.1': "opensuse-13.1"
+  'chef-ubuntu-10.04': "chef/ubuntu-10.04"
+  'chef-ubuntu-12.04': "chef/ubuntu-12.04"
+  'chef-ubuntu-14.04': "chef/ubuntu-14.04"
+
+# From PuppetLabs
+  'puppet-centos-5.11': "puppetlabs/centos-5.11-64-nocm"
+  'puppet-centos-6.5': "puppetlabs/centos-6.5-64-nocm"
+  'puppet-centos-7.0': "puppetlabs/centos-7.0-64-nocm"
+  'puppet-centos-6.5-openstack': "puppetlabs/centos-65-x64-openstack" # A basic Centos 6.5 box with Puppet for our OpenStack testing
+  'puppet-ubuntu-12.04': "puppetlabs/ubuntu-12.04-64-nocm"
+  'puppet-ubuntu-14.04': "puppetlabs/ubuntu-14.04-64-nocm"
+  'puppet-debian-6.09': "puppetlabs/debian-6.09-64-nocm"
+  'puppet-debian-7.6': "puppetlabs/debian-7.6-64-nocm"
+
+# Windows images - use at your own risk!!!
+  'winsrv2012r2': "windows_2012_r2_vmware.box"
+  'win-2008r2-enterprise': "opentable/win-2082r2-enterprise-amd64-nocm"
+  'win-2008r2-web': "opentable/win-2082r2-web-amd64-nocm"
+  'win-2008r2-standard': "opentable/win-2082r2-standard-amd64-nocm"
+  'win-2012r2-datacenter': "opentable/win-2012r2-datacenter-amd64-nocm"
+  'win-2012r2-standard': "opentable/win-2012r2-standard-amd64-nocm"
+  'win-2012r2-foundation': "opentable/win-2012r2-foundation-amd64-nocm"
+  'win-2012r2-essentials': "opentable/win-2012r2-essentials-amd64-nocm"
+
+  'windows-2012r2': "lmayorga1980/windows-2012r2" # Windows 2012R2 Enterprise with Puppet OS 3.7.1 and Chocolatey - VirtualBox only!
+
+# Oracle Solaris images - use at your own risk!!!!
+  'oracle-solaris-11':  "ruby-concurrency/oracle-solaris-11"
+  'oracle-solaris-10':  "ghprince/solaris-10-u11-x86"

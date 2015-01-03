@@ -1,0 +1,146 @@
+---
+roles:
+  pe-puppet-master:
+    hostmanager:
+      - {enabled: true}
+      - {manage_host: true}
+      - {ignore_private_ip: false}
+      - {include_offline: true}
+      - {aliases: '%w(master.example.com puppet.example.com puppet)'}
+    private_networks:
+      #- {ip: '0.0.0.0', auto_network: true}
+      - {ip: '172.16.110.1', auto_network: true}
+      #- {ip: '192.168.77.2', private_network: true}
+    provider:
+      type: virtualbox
+      customize:
+        - [modifyvm, !ruby/sym id, '--memory', 1280]
+        - [modifyvm, !ruby/sym id, '--cpus', 1]
+    provider:
+      type: vmware_fusion
+      vmx:
+        memsize: '2048'
+        numvcpus: '1'
+    #synced_folders:
+      #- host_path: 'manifests'
+      #  guest_path: '/vagrant/manifests'
+      #- host_path: 'modules'
+      #  guest_path: '/vagrant/modules'
+      #- host_path: 'files'
+      #  guest_path: '/vagrant/files'
+      #- host_path: 'hieradata'
+      #  guest_path: '/vagrant/hieradata'
+      #- host_path: 'puppet'
+      #  guest_path: '/root/puppet'
+      #- host_path: 'puppet/hieradata'
+      #  guest_path: '/root/puppet/hieradata'
+      #- host_path: 'puppet/environments'
+      #  guest_path: '/root/puppet/environments'
+      #  guest_path: '/etc/puppetlabs/puppet/hieradata'
+    provisioners:
+      - {type: shell, inline: "echo 'nameserver 8.8.8.8' > /etc/resolv.conf" }
+      - {type: shell, inline: "echo 'nameserver 8.8.4.4' >> /etc/resolv.conf" }
+      - {type: hosts}
+      - {type: pe_bootstrap, role: !ruby/sym master}
+      - {type: shell, inline: "/opt/puppet/bin/puppet apply --exec 'service {'iptables': ensure => 'stopped', enable => false }'"}
+      #- {type: shell, inline: "cp -f /root/puppet/hiera.yaml /etc/puppetlabs/puppet/hiera.yaml"}
+      #- {type: shell, inline: "cp -f /root/puppet/puppet.conf /etc/puppetlabs/puppet/puppet.conf"}
+      #- {type: shell, inline: "ln -s /root/puppet/environments /etc/puppetlabs/puppet/environments" }
+      - {type: shell, inline: '/vagrant/bin/provision.sh' }
+      - {type: shell, inline: '/vagrant/bin/enable-epel.sh' }
+      # comment out vmware-tools if you are using virtualbox
+      - {type: shell, inline: '/vagrant/bin/enable-vmware-tools.sh' }
+      - {type: shell, inline: '/vagrant/bin/provision-ansible.sh' }
+      - {type: shell, inline: '/vagrant/bin/provision-puppet-pe.sh' }
+      #- {type: shell, inline: '/vagrant/bin/provision-docker.sh' }
+      - {type: shell, inline: '/vagrant/scripts/deploy-files-master.sh' }
+#      - {type: shell, path: 'scripts/bootstrap_r10k.sh' }
+
+  pe-puppet-agent:
+    hostmanager:
+      - {enabled: true}
+      - {manage_host: true}
+      - {ignore_private_ip: false}
+      - {include_offline: true}
+    private_networks:
+      - {ip: '0.0.0.0', auto_network: true}
+    provider:
+      type: virtualbox
+      customize:
+        - [modifyvm, !ruby/sym id, '--memory', 512]
+        - [modifyvm, !ruby/sym id, '--cpus', 1]
+        # Use to create a larger disk, currently the 20GB here will add 20GB to the existing vm for a total of 40GB disk 'larger application installs'
+        - [modifyvm, !ruby/sym id, 'createhd', '--filename', ./disk.vdi, '--format', 'VDI', '--size', 20480]
+        # Don't USE, just testing something
+        #- [modifyvm, !ruby/sym id, 'storageattach', :id, '--storagectl', 'SATA Controller' '--port', 1, '--device', 0, '--type', hdd, '--medium', none, ./disk.vdi]
+        # Don't USE, just testing something
+    provider:
+      type: vmware_fusion
+      vmx:
+        memsize: '512'
+        numvcpus: '1'
+    provisioners:
+      - {type: shell, inline: "echo 'nameserver 8.8.8.8' > /etc/resolv.conf" }
+      - {type: shell, inline: "echo 'nameserver 8.8.4.4' >> /etc/resolv.conf" }
+      - {type: hosts}
+      - {type: pe_bootstrap}
+      - {type: shell, inline: "/opt/puppet/bin/puppet apply --exec 'service {'iptables': ensure => 'stopped', enable => false }'"}
+      - {type: shell, inline: '/vagrant/bin/provision.sh' }
+      - {type: shell, inline: '/vagrant/bin/enable-epel.sh' }
+      # comment out vmware-tools if you are using virtualbox
+      - {type: shell, inline: '/vagrant/bin/enable-vmware-tools.sh' }
+      - {type: shell, inline: '/vagrant/bin/provision-ansible.sh' }
+      - {type: shell, inline: '/vagrant/bin/provision-puppet-pe.sh' }
+      - {type: shell, inline: '/vagrant/scripts/deploy-files-client.sh' }
+
+  pe-windows-agent:
+    guest: windows
+    hostmanager:
+      - {enabled: true}
+      - {manage_host: true}
+      - {ignore_private_ip: false}
+      - {include_offline: true}
+    private_networks:
+      - {ip: '0.0.0.0', auto_network: true}
+      #- {ip: '192.168.77.3', private_network: true}
+    provider:
+      type: vmware_fusion
+      type: virtualbox
+      customize:
+        - [modifyvm, !ruby/sym id, '--boot_timeout', 900]
+    provisioners:
+#$script = <<SCRIPT
+#echo "192.168.77.2 master.example.com master" >c:\Windows\System32\drivers\etc\hosts
+#>c:\Windows\System32\drivers\etc\hosts
+#SCRIPT
+#      - {type: shell, inline: $script}
+      #- {type: shell, inline: "echo '192.168.77.2 master.example.com master' >c:\Windows\System32\drivers\etc\hosts"}
+      - {type: hosts}
+      - {type: pe_bootstrap}
+
+  pe-posix-agent:
+    hostmanager:
+      - {enabled: true}
+      - {manage_host: true}
+      - {ignore_private_ip: false}
+      - {include_offline: true}
+    private_networks:
+      - {ip: '0.0.0.0', auto_network: true}
+    provisioners:
+      - {type: shell, inline: "echo 'nameserver 8.8.8.8' > /etc/resolv.conf"}
+      - {type: shell, inline: "echo 'nameserver 8.8.4.4' >> /etc/resolv.conf"}
+      - {type: hosts}
+      - {type: pe_bootstrap}
+
+  pe-posix-noagent:
+    hostmanager:
+      - {enabled: true}
+      - {manage_host: true}
+      - {ignore_private_ip: false}
+      - {include_offline: true}
+    private_networks:
+      - {ip: '0.0.0.0', auto_network: true}
+    provisioners:
+      - {type: shell, inline: "echo 'nameserver 8.8.8.8' > /etc/resolv.conf"}
+      - {type: shell, inline: "echo 'nameserver 8.8.4.4' >> /etc/resolv.conf"}
+      - {type: hosts}

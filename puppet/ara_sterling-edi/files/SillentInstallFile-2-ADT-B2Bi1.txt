@@ -1,0 +1,38 @@
+ACCEPT_LICENSE=YES
+JVM_LOC=/?????/???????????/???ibm-java-x86_64-60??
+JDK64BIT=true
+LICENSE_FILE_PATH=/????????????/??????????????/??????????
+LICENSE_FILE=Core_License.xml
+LICENSE_FILE_1=SI_SFG_License.xml
+JCE_DIST_FILE=/?????/?????/?????/unrestrictedpolicyfiles.zip
+INSTALL_DIR=/opts/b2bi
+##### node specific - false on node 1, true on all other nodes in the cluster
+CLUSTER=false
+##### node specific, but normally true on node 1, false on all other nodes in the cluster; but since DBA is creating tables, false on all nodes
+REINIT_DB=false
+INSTALL_JAR=/????????/?????????/??????/SI_5020400.jar
+INSTALL_IP=172.24.131.41
+PORT1=10000
+APSERVER_PASS=B2BiC0stco!
+SI_ADMIN_MAIL_ADDR=b2bisvc@costco.com
+SI_ADMIN_SMTP_HOST=apprelay.np.costco.com
+FIPS_MODE=false
+DB_VENDOR=Oracle
+ORACLE_USE_BLOB=true
+##### DB is creating schema
+DB_CREATE_SCHEMA=false
+##### environment specific = DB User name from DB Team
+DB_USER=SI_USER
+##### environment specific = DB User password from DB Team
+DB_PASS=Tizz_afalld7y
+##### environment specific = DB SID/Service name from DB Team
+DB_DATA=edid01us
+##### environment specific = DB fully qualified server name from DB Team
+DB_HOST=edid01us.adt.db.np.costco.com
+DB_PORT=1521
+DB_DRIVERS=/??????/??????/??????/ojdbc6.jar
+DB_DRIVERS_VERSION=11_2_0_4
+UPGRADE=false
+DEBUG=true
+PROCESSORS=4
+MEMORY=8192

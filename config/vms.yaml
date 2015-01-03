@@ -1,0 +1,189 @@
+---
+vms:
+- name: "master"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-master" ]
+
+- name: "master2"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-master" ]
+
+- name: "web_main_lp01"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "node1"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "node2"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "web1"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "mail1"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "mailtest1"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "db1"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos7-01"
+  box: "chef/centos-7.0"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos7-02"
+  box: "chef/centos-7.0"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos6-01"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos6-02"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos5-01"
+  box: "chef/centos-5.11"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos5-02"
+  box: "chef/centos-5.11"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "debian6-01"
+  box: "chef/debian-6.0.10"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "debian6-02"
+  box: "chef/debian-6.0.10"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "debian7-01"
+  box: "chef/debian-7.7"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "debian7-02"
+  box: "chef/debian-7.7"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "ubuntu10-01"
+  box: "chef/ubuntu-10.04"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "ubuntu10-02"
+  box: "chef/ubuntu-10.04"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "ubuntu12-01"
+  box: "chef/ubuntu-12.04"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "ubuntu12-02"
+  box: "chef/ubuntu-12.04"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "ubuntu14-01"
+  box: "chef/ubuntu-14.04"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "ubuntu14-02"
+  box: "chef/ubuntu-14.04"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "coreos-01"
+  box: "yungsang/coreos"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "coreos-02"
+  box: "yungsang/coreos"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "sles11-01"
+  box: "sles-11sp1-x64-vbox4210-nocm-saleseng-4"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "solaris10-01"
+  box: "ghprince/solaris-10-u11-x86"
+  roles: [ "pe-posix-agent" ]
+
+- name: "solaris11-01"
+  box: "ruby-concurrency/oracle-solaris-11"
+  roles: [ "pe-posix-agent" ]
+
+
+- name: "win-2008r2-standard-01"
+  box: "opentable/win-2082r2-standard-amd64-nocm"
+  roles: [ "pe-windows-agent" ]
+  communicator: "winrm"
+  forwarded_ports:
+    - { guest: 5985, host: 5985 }
+    - { guest: 3389, host: 3389 }
+
+- name: "win-2008r2-standard-02"
+  box: "opentable/win-2082r2-standard-amd64-nocm"
+  roles: [ "pe-windows-agent" ]
+  communicator: "winrm"
+  forwarded_ports:
+    - { guest: 5985, host: 5986 }
+    - { guest: 3389, host: 3390 }
+
+- name: "win-2008r2-datacenter-01"
+  box: "opentable/win-2008r2-datacenter-amd64-nocm"
+  roles: [ "pe-windows-agent" ]
+  communicator: "winrm"
+  forwarded_ports:
+    - { guest: 5985, host: 5987 }
+    - { guest: 3389, host: 3391 }
+
+- name: "win-2008r2-datacenter-02"
+  box: "opentable/win-2008r2-datacenter-amd64-nocm"
+  roles: [ "pe-windows-agent" ]
+  communicator: "winrm"
+  forwarded_ports:
+    - { guest: 5985, host: 5988 }
+    - { guest: 3389, host: 3392 }
+
+- name: "win-2012r2-standard-01"
+  box: "opentable/win-2012r2-standard-amd64-nocm"
+  roles: [ "pe-windows-agent" ]
+  forwarded_ports:
+    - { guest: 5985, host: 5989 }
+    - { guest: 3389, host: 3393 }
+
+- name: "win-2012r2-standard-02"
+  box: "opentable/win-2012r2-standard-amd64-nocm"
+  roles: [ "pe-windows-agent" ]
+  forwarded_ports:
+    - { guest: 5985, host: 5991 }
+    - { guest: 3389, host: 3394 }
+
+- name: "win-2012r2-datacenter-01"
+  box: "opentable/win-2012r2-datacenter-amd64-nocm"
+  roles: [ "pe-windows-agent" ]
+  forwarded_ports:
+    - { guest: 5985, host: 5992 }
+    - { guest: 3389, host: 3395 }
+
+- name: "win-2012r2-datacenter-02"
+  box: "opentable/win-2012r2-datacenter-amd64-nocm"
+  roles: [ "pe-windows-agent" ]
+  forwarded_ports:
+    - { guest: 5985, host: 5993 }
+    - { guest: 3389, host: 3396 }
+
+- name: "win-2012r2-core-01"
+  box: "scorebig/windows-2012R2-SC"
+  roles: [ "pe-windows-agent" ]
+  forwarded_ports:
+    - { guest: 5985, host: 5995 }
+    - { guest: 3389, host: 3398 }

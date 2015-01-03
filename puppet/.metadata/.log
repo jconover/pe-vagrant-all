@@ -1,0 +1,204 @@
+!SESSION 2014-08-28 13:11:16.641 -----------------------------------------------
+eclipse.buildId=R201402150632
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/jconove/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/jconove/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-08-28 13:11:36.629
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2014-08-28 13:11:37.919
+!MESSAGE org.eclipse.xtext.ui.shared.internal.Activator  - Disabling JDT use. : org/eclipse/jdt/core/JavaCore
+
+
+!ENTRY org.apache.log4j 2 0 2014-08-28 13:11:38.111
+!MESSAGE org.eclipse.xtext.ui.shared.internal.Activator  - Disabling JDT use. : org/eclipse/jdt/core/JavaCore
+
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2014-08-28 13:11:43.828
+!MESSAGE No repository found at https://geppetto-updates.puppetlabs.com/4.0.
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2014-08-28 13:11:52.049
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at https://geppetto-updates.puppetlabs.com/4.0.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:395)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:653)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2014-08-28 13:11:52.050
+!MESSAGE No repository found at https://geppetto-updates.puppetlabs.com/4.0.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-08-28 13:11:53.086
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10054 2014-08-28 13:11:53.086
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.086
+!MESSAGE Software being installed: Subversive SVN Team Provider 2.0.0.I20140609-1700 (org.eclipse.team.svn.feature.group 2.0.0.I20140609-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.086
+!MESSAGE Software currently installed: SVNKit 1.7.11 Implementation (Optional) 3.0.5.I20140122-1700 (org.polarion.eclipse.team.svn.connector.svnkit17.feature.group 3.0.5.I20140122-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.086
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.086
+!MESSAGE Subversive SVN Team Provider UI Plug-in 1.1.1.I20130816-1700 (org.eclipse.team.svn.ui 1.1.1.I20130816-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.086
+!MESSAGE Subversive SVN Team Provider UI Plug-in 2.0.0.I20140609-1700 (org.eclipse.team.svn.ui 2.0.0.I20140609-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.086
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.086
+!MESSAGE From: Subversive SVN Team Provider 1.1.1.I20130816-1700 (org.eclipse.team.svn.feature.group 1.1.1.I20130816-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.086
+!MESSAGE To: org.eclipse.team.svn.ui [1.1.1.I20130816-1700]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.086
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.086
+!MESSAGE From: Subversive SVN Team Provider 2.0.0.I20140609-1700 (org.eclipse.team.svn.feature.group 2.0.0.I20140609-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.086
+!MESSAGE To: org.eclipse.team.svn.ui [2.0.0.I20140609-1700]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.086
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.086
+!MESSAGE From: SVNKit 1.7.11 Implementation (Optional) 3.0.5.I20140122-1700 (org.polarion.eclipse.team.svn.connector.svnkit17.feature.group 3.0.5.I20140122-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.086
+!MESSAGE To: org.eclipse.team.svn.feature.group [1.0.0.I20121109-1700,2.0.0)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-08-28 13:11:53.173
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10054 2014-08-28 13:11:53.173
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.173
+!MESSAGE Software being installed: Subversive SVN Team Provider 2.0.0.I20140609-1700 (org.eclipse.team.svn.feature.group 2.0.0.I20140609-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.173
+!MESSAGE Software currently installed: SVNKit 1.7.11 Implementation (Optional) 3.0.5.I20140122-1700 (org.polarion.eclipse.team.svn.connector.svnkit17.feature.group 3.0.5.I20140122-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.173
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.173
+!MESSAGE Subversive SVN Team Provider UI Plug-in 1.1.1.I20130816-1700 (org.eclipse.team.svn.ui 1.1.1.I20130816-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.173
+!MESSAGE Subversive SVN Team Provider UI Plug-in 2.0.0.I20140609-1700 (org.eclipse.team.svn.ui 2.0.0.I20140609-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.173
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.173
+!MESSAGE From: Subversive SVN Team Provider 1.1.1.I20130816-1700 (org.eclipse.team.svn.feature.group 1.1.1.I20130816-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.173
+!MESSAGE To: org.eclipse.team.svn.ui [1.1.1.I20130816-1700]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.173
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.173
+!MESSAGE From: Subversive SVN Team Provider 2.0.0.I20140609-1700 (org.eclipse.team.svn.feature.group 2.0.0.I20140609-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.173
+!MESSAGE To: org.eclipse.team.svn.ui [2.0.0.I20140609-1700]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.173
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.173
+!MESSAGE From: SVNKit 1.7.11 Implementation (Optional) 3.0.5.I20140122-1700 (org.polarion.eclipse.team.svn.connector.svnkit17.feature.group 3.0.5.I20140122-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.173
+!MESSAGE To: org.eclipse.team.svn.feature.group [1.0.0.I20121109-1700,2.0.0)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-08-28 13:11:53.262
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10054 2014-08-28 13:11:53.262
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.262
+!MESSAGE Software being installed: Subversive SVN Team Provider 2.0.0.I20140609-1700 (org.eclipse.team.svn.feature.group 2.0.0.I20140609-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.262
+!MESSAGE Software currently installed: SVNKit 1.7.11 Implementation (Optional) 3.0.5.I20140122-1700 (org.polarion.eclipse.team.svn.connector.svnkit17.feature.group 3.0.5.I20140122-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.262
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.262
+!MESSAGE Subversive SVN Team Provider UI Plug-in 1.1.1.I20130816-1700 (org.eclipse.team.svn.ui 1.1.1.I20130816-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.262
+!MESSAGE Subversive SVN Team Provider UI Plug-in 2.0.0.I20140609-1700 (org.eclipse.team.svn.ui 2.0.0.I20140609-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.262
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.262
+!MESSAGE From: Subversive SVN Team Provider 1.1.1.I20130816-1700 (org.eclipse.team.svn.feature.group 1.1.1.I20130816-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.262
+!MESSAGE To: org.eclipse.team.svn.ui [1.1.1.I20130816-1700]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.262
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.262
+!MESSAGE From: Subversive SVN Team Provider 2.0.0.I20140609-1700 (org.eclipse.team.svn.feature.group 2.0.0.I20140609-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.262
+!MESSAGE To: org.eclipse.team.svn.ui [2.0.0.I20140609-1700]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.262
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.262
+!MESSAGE From: SVNKit 1.7.11 Implementation (Optional) 3.0.5.I20140122-1700 (org.polarion.eclipse.team.svn.connector.svnkit17.feature.group 3.0.5.I20140122-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.262
+!MESSAGE To: org.eclipse.team.svn.feature.group [1.0.0.I20121109-1700,2.0.0)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-08-28 13:11:53.280
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10054 2014-08-28 13:11:53.280
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.280
+!MESSAGE Software being installed: Subversive SVN Team Provider 2.0.0.I20140609-1700 (org.eclipse.team.svn.feature.group 2.0.0.I20140609-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.280
+!MESSAGE Software currently installed: SVNKit 1.7.11 Implementation (Optional) 3.0.5.I20140122-1700 (org.polarion.eclipse.team.svn.connector.svnkit17.feature.group 3.0.5.I20140122-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.280
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.280
+!MESSAGE Subversive SVN Team Provider UI Plug-in 1.1.1.I20130816-1700 (org.eclipse.team.svn.ui 1.1.1.I20130816-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.280
+!MESSAGE Subversive SVN Team Provider UI Plug-in 2.0.0.I20140609-1700 (org.eclipse.team.svn.ui 2.0.0.I20140609-1700)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.280
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.280
+!MESSAGE From: Subversive SVN Team Provider 1.1.1.I20130816-1700 (org.eclipse.team.svn.feature.group 1.1.1.I20130816-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.280
+!MESSAGE To: org.eclipse.team.svn.ui [1.1.1.I20130816-1700]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.280
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.280
+!MESSAGE From: Subversive SVN Team Provider 2.0.0.I20140609-1700 (org.eclipse.team.svn.feature.group 2.0.0.I20140609-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.280
+!MESSAGE To: org.eclipse.team.svn.ui [2.0.0.I20140609-1700]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-08-28 13:11:53.280
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.280
+!MESSAGE From: SVNKit 1.7.11 Implementation (Optional) 3.0.5.I20140122-1700 (org.polarion.eclipse.team.svn.connector.svnkit17.feature.group 3.0.5.I20140122-1700)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-08-28 13:11:53.280
+!MESSAGE To: org.eclipse.team.svn.feature.group [1.0.0.I20121109-1700,2.0.0)
+!SESSION 2014-08-29 13:07:57.917 -----------------------------------------------
+eclipse.buildId=R201407250959
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/jconove/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/jconove/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-08-29 13:08:04.729
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2014-08-29 13:08:06.962
+!MESSAGE org.eclipse.xtext.ui.shared.internal.Activator  - Disabling JDT use. : org/eclipse/jdt/core/JavaCore
+
+
+!ENTRY org.apache.log4j 2 0 2014-08-29 13:08:06.984
+!MESSAGE org.eclipse.xtext.ui.shared.internal.Activator  - Disabling JDT use. : org/eclipse/jdt/core/JavaCore
+
+
+!ENTRY org.eclipse.equinox.p2.updatechecker 4 0 2014-08-29 13:08:12.434
+!MESSAGE Exception in update check thread
+!STACK 0
+java.lang.IllegalStateException: BundleContext is no longer valid
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.checkValid(BundleContextImpl.java:983)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getServiceReference(BundleContextImpl.java:559)
+	at org.eclipse.equinox.internal.p2.core.helpers.ServiceHelper.getService(ServiceHelper.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.getSharedPreferences(AbstractRepositoryManager.java:512)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.restoreRepositories(AbstractRepositoryManager.java:1016)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.getRepositoryProperty(AbstractRepositoryManager.java:564)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:686)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:151)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:129)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:73)
