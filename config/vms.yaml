@@ -4,6 +4,14 @@ vms:
   box: "chef/centos-6.6"
   roles: [ "pe-puppet-master" ]
 
+- name: "ubuntu12-agent1"
+  box: "chef/ubuntu-12.04"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "centos6-agent1"
+  box: "chef/centos-6.6"
+  roles: [ "pe-puppet-agent" ]
+
 - name: "master2"
   box: "chef/centos-6.6"
   roles: [ "pe-puppet-master" ]
@@ -12,12 +20,18 @@ vms:
   box: "chef/centos-6.6"
   roles: [ "pe-puppet-agent" ]
 
-- name: "node1"
+- name: "web_main_lp02"
+  box: "chef/centos-6.6"
+  #box: "puppetlabs/ubuntu-12.04-64-nocm"
+  #box: "chef/ubuntu-12.04"
+  roles: [ "pe-puppet-agent" ]
+
+- name: "app_main_lp01"
   box: "chef/centos-6.6"
   roles: [ "pe-puppet-agent" ]
 
-- name: "node2"
-  box: "chef/centos-6.6"
+- name: "db_main_lp01"
+  box: "chef/ubuntu-12.04"
   roles: [ "pe-puppet-agent" ]
 
 - name: "web1"

@@ -1,3 +1,4 @@
 ---
-syslogpkg: 'rsyslog'
 welcome: 'Welcome to Example.com'
+classes: - 'base'
+syslog: 'nothing'

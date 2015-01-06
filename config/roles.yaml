@@ -8,8 +8,8 @@ roles:
       - {include_offline: true}
       - {aliases: '%w(master.example.com puppet.example.com puppet)'}
     private_networks:
-      #- {ip: '0.0.0.0', auto_network: true}
-      - {ip: '172.16.110.1', auto_network: true}
+      - {ip: '0.0.0.0', auto_network: true}
+      #- {ip: '172.16.110.1', auto_network: true}
       #- {ip: '192.168.77.2', private_network: true}
     provider:
       type: virtualbox
@@ -89,7 +89,7 @@ roles:
       - {type: shell, inline: '/vagrant/bin/enable-epel.sh' }
       # comment out vmware-tools if you are using virtualbox
       - {type: shell, inline: '/vagrant/bin/enable-vmware-tools.sh' }
-      - {type: shell, inline: '/vagrant/bin/provision-ansible.sh' }
+      #- {type: shell, inline: '/vagrant/bin/provision-ansible.sh' }
       - {type: shell, inline: '/vagrant/bin/provision-puppet-pe.sh' }
       - {type: shell, inline: '/vagrant/scripts/deploy-files-client.sh' }
 

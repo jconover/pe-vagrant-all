@@ -27,7 +27,8 @@ echo " "
   #sudo ln -s /vagrant/puppet/files /etc/puppetlabs/puppet/files
   #sudo ln -s /vagrant/puppet/manifests /etc/puppetlabs/puppet/manifests
   #sudo ln -s /vagrant/puppet/modules /etc/puppetlabs/puppet/modules
-  sudo ln -s /vagrant/puppet/hieradata /etc/puppetlabs/puppet/hieradata
+  sudo mkdir -p /etc/puppetlabs/puppet/environments/production/
+  sudo ln -s /vagrant/puppet/hieradata /etc/puppetlabs/puppet/environments/production/hieradata
   sudo ln -s /vagrant/puppet/environments /etc/puppetlabs/puppet/environments
   #sudo /bin/mv /vagrant/puppet/hiera.yaml /etc/puppetlabs/puppet/hiera.yaml.$(date +%F)
   sudo ln -s /vagrant/puppet/hiera.yaml /etc/puppetlabs/puppet/hiera.yaml

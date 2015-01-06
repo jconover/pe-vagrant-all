@@ -44,3 +44,5 @@ File { backup => 'main' }
 Package {
     allow_virtual => true,
 }
+
+#hiera_include('classes')

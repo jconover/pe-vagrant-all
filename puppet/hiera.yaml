@@ -1,0 +1,18 @@
+---
+:backends:
+  - yaml
+  - json
+:hierarchy:
+  - "hosts/%{::hostname}"
+  - "roles/%{::role}"
+  - "%{::kernel}/%{::osfamily}/%{::lsbmajdistrelease}"
+  - "is_virtual/%{::is_virtual} "
+  - "%{environment}"
+  - common
+
+:yaml:
+  :datadir: '/etc/puppetlabs/puppet/environments/%{environment}/hieradata'
+  #:datadir: '/etc/puppetlabs/puppet/hieradata'
+:json:
+  :datadir: '/etc/puppetlabs/puppet/environments/%{environment}/hieradata'
+  #:datadir: '/etc/puppetlabs/puppet/hieradata'

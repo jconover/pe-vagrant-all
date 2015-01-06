@@ -1,0 +1,5 @@
+welcome: 'Weclome to the localdomain'
+classes:
+  - virtual
+  - resolver
+resolver::search: 'devel.example.com'

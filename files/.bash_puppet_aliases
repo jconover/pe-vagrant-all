@@ -13,3 +13,4 @@ alias sumco='sudo -i -u peadmin' # <-- used to run mco(MCollective) commands
 alias modpath='cd /etc/puppetlabs/puppet/modules'
 alias manpath='cd /etc/puppetlabs/puppet/manifests'
 alias penv='cd /etc/puppetlabs/puppet/environments'
+alias prodenv='cd /etc/puppetlabs/puppet/environments/production'

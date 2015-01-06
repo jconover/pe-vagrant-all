@@ -8,9 +8,11 @@
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
+hiera_include('classes', 'base')
+
 node default {
-  notify { "node '${::clientcert}' has not been classified": }
-  include base
+  # notify { "node '${::clientcert}' has not been classified": }
+  #include base
   #include profile::base
   #include ssh
   #include sudo
